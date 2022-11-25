@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Movies</title>
+        <link rel="stylesheet" href="{%static "css/movies.css"%}">
+    </head>
+    <body>
+    <a href="/" >Home-Page</a>
+    {% if sentdata %}
+            <h1> Thanks for your rating</h1>
+            <h2>Do you want to add other movie-ratings...Go on..</h2>
+    {% else %}
+        <h1>Movie-Ratings:</h1>
+    {% endif %}
+        <div align='center'>
+            <h1>Add Movie Information</h1>
+            <hr />
+
+            <form method="post">
+                {{form1.as_p}}
+                {%csrf_token%}
+                <input type="submit" value="Add-Rating">
+            </form>
+        </div>
+    </body>
+</html>
